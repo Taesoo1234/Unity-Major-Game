@@ -19,9 +19,13 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround;
 
     public bool gameOver = false;
+    public bool x_key = false;
 
     public float horizontalInput;
     public float verticalInput;
+
+    public GameObject swordPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +43,9 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        // checks if the space key is pressed, and if the isOnGround bool is true and
+        // checks if the z key is pressed, and if the isOnGround bool is true and
         // if the player is not in a gameover state
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
+        if (Input.GetKeyDown(KeyCode.Z) && isOnGround && !gameOver)
         {
             // if both conditions are satisfied, make the player jump by adding force vertically
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -50,24 +54,36 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow));
+        // code for moving left
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) ;
         {
             transform.Translate(Vector3.left * speed * horizontalInput * Time.deltaTime);
         }
 
+        // code for moving right
         if (Input.GetKeyDown(KeyCode.RightArrow)) ;
         {
             transform.Translate(Vector3.right * speed * horizontalInput);
         }
 
+        // code for moving up
         if (Input.GetKeyDown(KeyCode.UpArrow)) ;
         {
             transform.Translate(Vector3.back * speed * verticalInput * Time.deltaTime);
         }
 
+        //code for moving down
         if (Input.GetKeyDown(KeyCode.DownArrow)) ;
         {
             transform.Translate(Vector3.forward * speed * verticalInput);
+        }
+
+        //code for swinging sword
+        if (Input.GetKeyDown(KeyCode.X)) ;
+        {
+            //Instantiate(swordPrefab, transform.position, swordPrefab.transform.rotation);
+            x_key = true;
+            Debug.Log("X");
         }
     }
 
@@ -79,5 +95,10 @@ public class PlayerController : MonoBehaviour
         {
             isOnGround = true;
         }
+
+        if (collision.gameObject.CompareTag("Hazard"))
+        {
+            gameOver = true;
+        }
     }
-}
+};
