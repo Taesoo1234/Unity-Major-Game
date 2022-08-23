@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyRanged : MonoBehaviour
 {
-    public GameObject projectile;
+    public GameObject projectilePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +20,8 @@ public class EnemyRanged : MonoBehaviour
 
     public void shoot()
     {
-        Debug.Log(shooting);
-        //shoot object
+        Debug.Log("shooting");
+        Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         StartCoroutine(ShootCooldown());
     }
     IEnumerator ShootCooldown()
