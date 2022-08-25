@@ -840,6 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2805541967987479693, guid: ae99b2695cccdb446bd357e6124e3ec5, type: 3}
+  player: {fileID: 0}
 --- !u!1 &1232346661
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,11 +855,11 @@ GameObject:
   - component: {fileID: 1232346662}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Reflector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!136 &1232346662
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -867,7 +868,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232346661}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
   m_Height: 2
@@ -973,10 +974,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 75
   gravityModifier: 1
-  speed: 0.05
+  speed: 100
   isOnGround: 0
   gameOver: 0
-  x_key: 0
   horizontalInput: 0
   verticalInput: 0
   swordPrefab: {fileID: 1232346661}
