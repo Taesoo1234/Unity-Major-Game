@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float gravityModifier;
 
-    public float speed = 10;
+    public float speed = 10f;
 
     // a bool that is true/false depending on if the player is on the ground
     public bool isOnGround;
@@ -54,34 +54,33 @@ public class PlayerController : MonoBehaviour
         }
 
         // code for moving left
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) ;
         {
             transform.Translate(Vector3.left * speed * horizontalInput * Time.deltaTime);
         }
 
         // code for moving right
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow)) ;
         {
-            transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+            transform.Translate(Vector3.right * speed * horizontalInput);
         }
 
         // code for moving up
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow)) ;
         {
             transform.Translate(Vector3.back * speed * verticalInput * Time.deltaTime);
         }
 
         //code for moving down
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow)) ;
         {
-            transform.Translate(Vector3.forward * speed * verticalInput * Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * verticalInput);
         }
 
         //code for swinging sword
         if (Input.GetKeyDown(KeyCode.X))
         {
             Instantiate(swordPrefab, transform.position, swordPrefab.transform.rotation);
-            Debug.Log("X");
         }
     }
 
