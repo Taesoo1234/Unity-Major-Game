@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4752454918564957694}
   - component: {fileID: 4752454918564957681}
   - component: {fileID: 4752454918564957680}
-  - component: {fileID: 4752454918564957692}
+  - component: {fileID: 3429671094688097851}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Reflector
@@ -99,7 +99,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4752454918564957692
+--- !u!114 &3429671094688097851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.Rotate(0, 0, 90);
-        //StartCoroutine(SwordCountdown());
+        player = GameObject.FindGameObjectWithTag("Player");
+        transform.Rotate(0, 110, 90);
+        StartCoroutine(SwordCountdown());
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAround(player.transform.position, Vector3.up, 360 * Time.deltaTime);
+        transform.RotateAround(player.transform.position, Vector3.up, 280 * Time.deltaTime);
+        transform.position = player.transform.position + (transform.rotation * Vector3.back * .5f);
     }
 
-    void DestroyObjectDelayed()
+    IEnumerator SwordCountdown()
     {
-        // Kills the game object in 5 seconds after loading the object
-        Destroy(gameObject, .02f);
+        yield return new WaitForSeconds(.5f);
+        Destroy(gameObject);
     }
 
-    //IEnumerator SwordCountdown()
 }

@@ -841,11 +841,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2805541967987479693, guid: ae99b2695cccdb446bd357e6124e3ec5, type: 3}
   player: {fileID: 0}
---- !u!1 &1232346661 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4752454918564957683, guid: dec1e6a910a6b4b42beccaab0572d0a1, type: 3}
-  m_PrefabInstance: {fileID: 4752454919794676694}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1371444260
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +859,7 @@ GameObject:
   - component: {fileID: 1371444270}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1006,7 +1001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: 0
-  swordPrefab: {fileID: 1232346661}
+  swordPrefab: {fileID: 4752454918564957683, guid: dec1e6a910a6b4b42beccaab0572d0a1, type: 3}
 --- !u!1 &1631317917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,10 +1266,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
-    - target: {fileID: 4752454918564957692, guid: dec1e6a910a6b4b42beccaab0572d0a1, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1371444260}
     - target: {fileID: 4752454918564957695, guid: dec1e6a910a6b4b42beccaab0572d0a1, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1323,5 +1314,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: dec1e6a910a6b4b42beccaab0572d0a1, type: 3}
