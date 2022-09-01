@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  reflected: 0
+  reflected: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 996594815}
   m_Layer: 0
   m_Name: EnemyRanged
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2805541967987479693, guid: ae99b2695cccdb446bd357e6124e3ec5, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 1371444260}
 --- !u!1 &1371444260
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371444260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.4, y: 1.62, z: 4.4137435}
+  m_LocalPosition: {x: -19.4, y: 1.6, z: 4.4137435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1203,6 +1203,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6634402532580067505, guid: ae99b2695cccdb446bd357e6124e3ec5, type: 3}
+      propertyPath: speed
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2805541967987479693, guid: ae99b2695cccdb446bd357e6124e3ec5, type: 3}
       propertyPath: m_Name
       value: Projectile
@@ -1252,7 +1256,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: -1292414435981152467, guid: ae99b2695cccdb446bd357e6124e3ec5, type: 3}
+    - {fileID: 0}
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: ae99b2695cccdb446bd357e6124e3ec5, type: 3}
 --- !u!1001 &4752454919794676694
@@ -1262,6 +1266,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4752454918564957680, guid: dec1e6a910a6b4b42beccaab0572d0a1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4752454918564957683, guid: dec1e6a910a6b4b42beccaab0572d0a1, type: 3}
       propertyPath: m_Name
       value: Sword

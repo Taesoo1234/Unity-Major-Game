@@ -19,7 +19,7 @@ public class Sword : MonoBehaviour
     void Update()
     {
         transform.RotateAround(player.transform.position, Vector3.up, 280 * Time.deltaTime);
-        transform.position = player.transform.position + (transform.rotation * Vector3.back * .5f);
+        transform.localPosition = player.transform.position + (transform.rotation * Vector3.back * .5f);
     }
 
     IEnumerator SwordCountdown()
