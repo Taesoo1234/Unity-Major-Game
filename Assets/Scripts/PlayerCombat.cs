@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public bool swordReady = true;
     public bool gameOver = false;
     public GameObject swordPrefab;
 
@@ -17,9 +18,11 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         //code for swinging sword
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && swordReady)
         {
-            Instantiate(swordPrefab, transform.position + (Vector3.forward * 0.6f) + (Vector3.up * 0.4f), transform.rotation);
+            Instantiate(swordPrefab, transform.position + (Vector3.forward * 1f) + (Vector3.up * 0.3f), transform.rotation);
+            swordReady = false;
+            StartCoroutine(SwordCountdown());
         }
     }
 
@@ -29,5 +32,10 @@ public class PlayerCombat : MonoBehaviour
         {
             gameOver = true;
         }
+    }
+    IEnumerator SwordCountdown()
+    {
+        yield return new WaitForSeconds(.5f);
+        swordReady = true;
     }
 }
