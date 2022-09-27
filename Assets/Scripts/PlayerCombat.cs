@@ -33,6 +33,7 @@ public class PlayerCombat : MonoBehaviour
             gameOver = true;
         }
     }
+
     IEnumerator SwordCountdown()
     {
         yield return new WaitForSeconds(.5f);

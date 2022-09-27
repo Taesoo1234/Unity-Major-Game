@@ -21,15 +21,11 @@ public class ProjectileHoming : MonoBehaviour
       
         if (reflected == false)
         {
-            //transform.Translate(Vector3.forward * speed);
             transform.Translate(Vector3.forward * speed);
         }
 
         if (reflected == true)
         {
-            //enemy = GameObject.FindGameObjectsWithTag("Enemy");
-            //enemy = GameObject.FindGameObjectsWithTag("Enemy")[0];
-            //Vector3 lookDirection = (enemy.transform.position - transform.position).normalized;
             transform.Translate(Vector3.back * speed);
         }
     }
