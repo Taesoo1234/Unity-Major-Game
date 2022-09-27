@@ -28,5 +28,16 @@ public class EnemyHealth : MonoBehaviour
             Debug.Log("Hit");
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ReflectedProjectile"))
+        {
+            health = -3f;
+            Debug.Log("Hit");
+            Destroy(other.gameObject);
+        }
+    }
+     
 }
 

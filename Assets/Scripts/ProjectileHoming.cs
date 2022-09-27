@@ -34,12 +34,14 @@ public class ProjectileHoming : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-
-        if (collision.gameObject.CompareTag("Reflector"))
+ 
+        //if (collision.gameObject.CompareTag("Reflector"))
+        if (other.CompareTag("Reflector"))
         {
             reflected = true;
+            gameObject.tag = "ReflectedProjectile";
         }
 
     }
