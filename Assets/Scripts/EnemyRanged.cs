@@ -22,8 +22,9 @@ public class EnemyRanged : MonoBehaviour
 
     public void shoot()
     {
-        Debug.Log("shooting");
-        Instantiate(projectilePrefab, transform.position + (Vector3.up * .6f), projectilePrefab.transform.rotation);
+        GameObject projectile = (GameObject)Instantiate(projectilePrefab);
+        projectile.transform.position = transform.position;
+        projectile.transform.rotation = transform.rotation;
         StartCoroutine(ShootCooldown());
     }
     IEnumerator ShootCooldown()

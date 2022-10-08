@@ -10,6 +10,7 @@ TagManager:
   - Reflector
   - Projectile
   - ReflectedProjectile
+  - Wall
   layers:
   - Default
   - TransparentFX

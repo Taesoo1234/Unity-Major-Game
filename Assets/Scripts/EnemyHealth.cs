@@ -10,13 +10,14 @@ public class EnemyHealth : MonoBehaviour
     {
 
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         if (health < 1)
         {
             Destroy(gameObject);
+            SendMessageUpwards("Death");
         }
     }
 
@@ -25,7 +26,6 @@ public class EnemyHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Reflector"))
         {
             health = -1f;
-            Debug.Log("Hit");
         }
     }
 

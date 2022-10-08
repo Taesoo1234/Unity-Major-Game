@@ -33,11 +33,15 @@ public class ProjectileHoming : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
  
-        //if (collision.gameObject.CompareTag("Reflector"))
         if (other.CompareTag("Reflector"))
         {
             reflected = true;
             gameObject.tag = "ReflectedProjectile";
+        }
+
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
 
     }
