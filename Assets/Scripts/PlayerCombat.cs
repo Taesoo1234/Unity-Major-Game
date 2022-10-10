@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    //An asset that shows when the player has a powerup
     public bool swordReady = true;
     public bool gameOver = false;
     public GameObject swordPrefab;
@@ -39,4 +40,6 @@ public class PlayerCombat : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         swordReady = true;
     }
+
+   
 }

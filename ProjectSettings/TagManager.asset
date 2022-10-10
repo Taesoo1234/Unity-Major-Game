@@ -11,6 +11,7 @@ TagManager:
   - Projectile
   - ReflectedProjectile
   - Wall
+  - Powerup
   layers:
   - Default
   - TransparentFX

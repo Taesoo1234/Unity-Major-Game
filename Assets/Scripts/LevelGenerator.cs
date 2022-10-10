@@ -12,6 +12,7 @@ public class LevelGenerator : MonoBehaviour
     public GameObject wall;
     public GameObject player;
     public GameObject enemy;
+    public GameObject powerup;
     public int enemycount = 0;
     private bool playerSpawned = false;
     public bool cangenerate = true;
@@ -65,10 +66,17 @@ public class LevelGenerator : MonoBehaviour
                 {
                     // Spawn an enemy
                     Vector3 pos = new Vector3(x - width / 2f, 1f, y - height / 2f);
-                    //Instantiate(enemy, pos, Quaternion.identity, transform);
                     var newEnemy = Instantiate(enemy, pos, Quaternion.identity);
                     newEnemy.transform.parent = gameObject.transform;
                     enemycount = enemycount + 1;
+                }
+
+                else if (Random.value > .99f)
+                {
+                    // Spawn a powerup
+                    Vector3 pos = new Vector3(x - width / 2f, 1f, y - height / 2f);
+                    var newPowerup = Instantiate(powerup, pos, Quaternion.identity);
+                    newPowerup.transform.parent = gameObject.transform;
                 }
             }
         }
