@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    //An asset that shows when the player has a powerup
     public bool swordReady = true;
     public bool gameOver = false;
     public GameObject swordPrefab;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +30,16 @@ public class PlayerCombat : MonoBehaviour
         if (collision.gameObject.CompareTag("Hazard"))
         {
             gameOver = true;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(gameObject);
         }
     }
 
