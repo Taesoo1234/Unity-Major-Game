@@ -41,6 +41,11 @@ public class PlayerCombat : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.CompareTag("Reflector"))
+        {
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), GetComponent<Collider>());
+        }
     }
 
     IEnumerator SwordCountdown()

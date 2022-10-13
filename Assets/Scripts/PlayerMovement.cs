@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Animator playerAnim;
     public CharacterController controller;
     public float speed = 6f;
     public bool hasPowerup = false;
@@ -13,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerAnim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -27,13 +26,9 @@ public class PlayerMovement : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-            playerAnim.SetTrigger("Walk_trig");
             controller.Move(direction * speed * Time.deltaTime);
         }
-        else
-        {
-            playerAnim.SetBool("Stationary", false);
-        }
+
         controller.Move(direction * 0 * Time.deltaTime);
     }
 
@@ -51,23 +46,22 @@ public class PlayerMovement : MonoBehaviour
             powerupIndicator.gameObject.SetActive(true);
             StartCoroutine(PowerupCountdownRoutine());
         }
+
+
+        IEnumerator PowerupCountdownRoutine()
+        {
+            // wait 5 seconds
+            yield return new WaitForSeconds(8);
+
+            speed = 4f;
+
+            // make the hasPowerup bool false
+            hasPowerup = false;
+
+            // removes the powerup indicator
+            powerupIndicator.gameObject.SetActive(false);
+
+        }
     }
-
-    IEnumerator PowerupCountdownRoutine()
-    {
-        // wait 5 seconds
-        yield return new WaitForSeconds(8);
-
-        speed = 4f;
-
-        // make the hasPowerup bool false
-        hasPowerup = false;
-
-        // removes the powerup indicator
-        powerupIndicator.gameObject.SetActive(false);
-
-    }
-
-
 }
 
