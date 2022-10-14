@@ -19,7 +19,8 @@ public class GameOver : MonoBehaviour
         // checks if the gameobject 'Player' has been deleted
         if (GameObject.Find("Player") == null)
         {
-            // with an x offset of 5 and a y offset of 4
+            // if true, teleport to the center
+            // with a y offset of 4.5
             // to be visible to the player
             transform.position = new Vector3(0, 4.5f, 0);
         }

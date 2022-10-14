@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2672259250473647492}
   - component: {fileID: 369559524621106254}
   - component: {fileID: -8564072681672412770}
-  - component: {fileID: 6959558856853235661}
+  - component: {fileID: 1752385839567974560}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f185bac5174e464c8e11352e4482c76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,8 +97,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.607213
+  m_Center: {x: 0, y: 0.10721302, z: 0}
 --- !u!54 &-8564072681672412770
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6959558856853235661
+--- !u!114 &1752385839567974560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2805541967987479693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4977766b9046e9745974d19a97080f90, type: 3}
+  m_Script: {fileID: 11500000, guid: fb5405b2862c13a4088499bf31e4c5b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.075
+  speed: 0.05
   reflected: 0

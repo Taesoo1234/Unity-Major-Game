@@ -28,10 +28,8 @@ public class ScoreKeeper : MonoBehaviour
 
     // when recieveing the message IncreaseScore
     // increase the score by 1
-    // print in the debug log (for testing)
     public void IncreaseScore()
     {
         score = score + 1;
-        Debug.Log(score);
     }
 }
