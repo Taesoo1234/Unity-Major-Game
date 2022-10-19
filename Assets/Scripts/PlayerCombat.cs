@@ -19,8 +19,8 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // when x is pressed and swordReady is true
-        if (Input.GetKeyDown(KeyCode.X) && swordReady)
+        // when space is pressed and swordReady is true
+        if (Input.GetKeyDown("space") && swordReady)
         {
             // create the sword prefab
             Instantiate(swordPrefab, transform.position + (Vector3.forward * 1f) + (Vector3.up * 0.3f), transform.rotation);
